@@ -114,8 +114,7 @@ export function areObstaclesColliding(obs1: Obstacle, obs2: Obstacle): boolean {
 
 export function calculateVisibilityPolygon(
   origin: Point,
-  obstacles: Obstacle[],
-  maxRange: number
+  obstacles: Obstacle[]
 ): Point[] {
   const rays: number[] = [];
   const boundaries = [

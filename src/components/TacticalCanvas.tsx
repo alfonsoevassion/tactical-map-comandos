@@ -42,7 +42,7 @@ const TacticalCanvas: React.FC<Props> = ({
         entities.forEach(entity => {
           if (entity.type === 'enemy') {
             const enemy = entity as Enemy;
-            visionPolygons[enemy.id] = calculateVisibilityPolygon({ x: enemy.x, y: enemy.y }, obstacles, enemy.visionRange);
+            visionPolygons[enemy.id] = calculateVisibilityPolygon({ x: enemy.x, y: enemy.y }, obstacles);
           }
         });
 
