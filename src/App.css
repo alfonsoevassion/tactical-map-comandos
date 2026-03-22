@@ -1,0 +1,155 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.App-header {
+  margin-bottom: 1rem;
+}
+
+.main-content {
+  display: flex;
+  gap: 30px;
+  background-color: #242424;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.canvas-container {
+  flex-shrink: 0;
+}
+
+.controls {
+  flex-grow: 1;
+  text-align: left;
+  min-width: 200px;
+  padding: 15px;
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+
+.control-group {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.instructions {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.instructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.instructions li {
+  margin-bottom: 10px;
+}
+
+.obstacle-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2c3e50;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  border: 1px solid #34495e;
+  z-index: 100;
+  min-width: 250px;
+}
+
+.obstacle-modal h3 {
+  margin-top: 0;
+  color: #ecf0f1;
+}
+
+.modal-input-group {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-input-group input {
+  width: 80px;
+  padding: 5px;
+  background: #34495e;
+  border: 1px solid #7f8c8d;
+  color: white;
+  border-radius: 4px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.toolbar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-add {
+  background-color: #27ae60;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-add:hover {
+  background-color: #2ecc71;
+  transform: translateY(-2px);
+}
+
+.btn-reset {
+  background-color: #7f8c8d;
+  margin-left: 20px;
+}
+
+.btn-reset:hover {
+  background-color: #95a5a6;
+}
+
+.legend {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 0.9rem;
+  color: #ccc;
+  padding: 10px;
+  background: #1a1a1a;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
