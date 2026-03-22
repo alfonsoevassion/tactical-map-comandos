@@ -1,3 +1,4 @@
 @echo off
-start npm run dev
-gemini
+echo Iniciando entorno de desarrollo de Tactical Map...
+npm install && npm run dev
+pause

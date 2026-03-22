@@ -119,10 +119,10 @@ export function calculateVisibilityPolygon(
 ): Point[] {
   const rays: number[] = [];
   const boundaries = [
-    { start: { x: 0, y: 0 }, end: { x: 2000, y: 0 } },
-    { start: { x: 2000, y: 0 }, end: { x: 2000, y: 2000 } },
-    { start: { x: 2000, y: 2000 }, end: { x: 0, y: 2000 } },
-    { start: { x: 0, y: 2000 }, end: { x: 0, y: 0 } },
+    { start: { x: 0, y: 0 }, end: { x: 800, y: 0 } },
+    { start: { x: 800, y: 0 }, end: { x: 800, y: 600 } },
+    { start: { x: 800, y: 600 }, end: { x: 0, y: 600 } },
+    { start: { x: 0, y: 600 }, end: { x: 0, y: 0 } },
   ];
 
   obstacles.forEach((obs) => {
@@ -131,6 +131,12 @@ export function calculateVisibilityPolygon(
       const angle = Math.atan2(v.y - origin.y, v.x - origin.x);
       rays.push(angle, angle - 0.0001, angle + 0.0001);
     });
+  });
+
+  // Add boundary corners to rays to ensure full coverage
+  boundaries.forEach(b => {
+    const angle = Math.atan2(b.start.y - origin.y, b.start.x - origin.x);
+    rays.push(angle);
   });
 
   [0, Math.PI / 2, Math.PI, -Math.PI / 2].forEach(a => rays.push(a));
@@ -151,8 +157,8 @@ export function calculateVisibilityPolygon(
 
   uniqueRays.forEach((angle) => {
     const rayEnd = {
-      x: origin.x + Math.cos(angle) * maxRange * 2,
-      y: origin.y + Math.sin(angle) * maxRange * 2,
+      x: origin.x + Math.cos(angle) * 2000, // Longitud suficiente para cualquier punto del canvas
+      y: origin.y + Math.sin(angle) * 2000,
     };
     let closest: Intersection | null = null;
     walls.forEach((wall) => {
