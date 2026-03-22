@@ -59,16 +59,6 @@ function App() {
     });
   };
 
-  const rotateEnemy = (id: string) => {
-    setEntities(prev => prev.map(e => {
-      if (e.id === id && e.type === 'enemy') {
-        const enemy = e as Enemy;
-        return { ...enemy, direction: enemy.direction + 0.1 };
-      }
-      return e;
-    }));
-  };
-
   const updateDirection = (id: string, direction: number) => {
     setEntities(prev => prev.map(e => (e.id === id && e.type === 'enemy') ? { ...e, direction } : e));
   };
