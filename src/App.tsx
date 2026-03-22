@@ -183,7 +183,7 @@ function App() {
           </div>
           <div className="legend">
             <span>🔵 Aliado</span>
-            <span>🔴 Enemigo (con cono)</span>
+            <span>🔴 Enemigo</span>
             <span>⬜ Obstáculo</span>
           </div>
         </div>
